@@ -28,8 +28,6 @@ export default function Navbar(props) {
             overflowX="hidden"
             overflowY="auto"
             bg={"tete.900"}
-            borderColor={"tete.500"}
-            borderRightWidth="1px"
             w="60"
             {...props}
         >
