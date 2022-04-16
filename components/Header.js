@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { HStack, Flex, IconButton } from "@chakra-ui/react";
+import { Box, HStack, Flex, IconButton } from "@chakra-ui/react";
 import { Button, Link, Select } from "@saas-ui/react";
 import { FiMenu } from "react-icons/fi";
 
@@ -27,24 +27,28 @@ export default function Header({ title = "Not Found!", onOpen = () => {} }) {
                     icon={<FiMenu />}
                     size="sm"
                 />
-                <HStack spacing="8" ml="8">
+                <HStack spacing="8" ml="8" d={{ base: "none", md: "flex" }}>
                     <Link href="/">Realtime Bet</Link>
                     <Link href="/">Tete Pools</Link>
                     <Link href="/">NFT Staking</Link>
                     <Link href="/">Street Wallet</Link>
                 </HStack>
 
-                <Flex align="center" justify={"end"}>
-                    <Select options={[{ label: "ENG", color: "tete.900" }]} />
-                    <Button
-                        ml="8"
-                        px="16"
-                        bg="tete.hover"
-                        label="Connect Wallet"
-                        _hover={{
-                            bg: "tete.500",
-                        }}
-                    />
+                <Flex alignItems="center" justifyContent="end">
+                    <Box d={{ base: "none", md: "flex" }}>
+                        <Select
+                            options={[{ label: "ENG", color: "tete.900" }]}
+                        />
+                    </Box>
+                    <Box w="200px" ml="4">
+                        <Button
+                            bg="tete.hover"
+                            label="Connect Wallet"
+                            _hover={{
+                                bg: "tete.500",
+                            }}
+                        />
+                    </Box>
                 </Flex>
             </Flex>
         </>
