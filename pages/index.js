@@ -8,11 +8,14 @@ export default function Home({ sidebar }) {
     return (
         <>
             <Header title="Home" onopen={sidebar.onOpen} />
-            <Flex justifyContent="space-evenly">
+            <Flex
+                direction={{ base: "column", md: "row" }}
+                justifyContent="space-evenly"
+            >
                 <Box w="full" p="4">
                     <Card px="6" py="12" w="full" bg="tete.hover" color="white">
                         <Flex>
-                            <Box w="40%">
+                            <Box w={{ base: "full", md: "40%" }}>
                                 <Text
                                     fontSize="xl"
                                     fontWeight="bold"
@@ -62,14 +65,18 @@ export default function Home({ sidebar }) {
                                 }}
                             />
                         </Flex>
-                        <HStack mt="4">
-                            <EventCard isLive={getRandomItem([true, false])} />
-                            <EventCard isLive={getRandomItem([true, false])} />
-                            <EventCard isLive={getRandomItem([true, false])} />
-                        </HStack>
+                        <Flex
+                            direction={{ base: "column", md: "row" }}
+                            mt="4"
+                            mr="4"
+                        >
+                            <EventCard isLive={true} />
+                            <EventCard isLive={false} />
+                            <EventCard isLive={true} />
+                        </Flex>
                     </Box>
                 </Box>
-                <Box w="35%" p="4"></Box>
+                <Box w={{ base: "full", md: "35%" }} p="4"></Box>
             </Flex>
         </>
     );
