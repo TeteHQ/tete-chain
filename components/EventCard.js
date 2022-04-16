@@ -11,7 +11,7 @@ export default function EventCard({
 }) {
     return (
         <>
-            <Card p="2" w="full" bg="tete.400" color="white">
+            <Card p="2" m="2" w="full" bg="tete.400" color="white">
                 <CardHeader p="0">
                     <Badge
                         py="1"
