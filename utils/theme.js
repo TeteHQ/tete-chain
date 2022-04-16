@@ -10,9 +10,17 @@ export const theme = extendTheme(
             heading: "Montserrat",
         },
         config: {
-            cssVarPrefix: "ck",
+            cssVarPrefix: "tete",
         },
-        colors: {},
+        colors: {
+            tete: {
+                900: "#131A33", // header
+                500: "#2A3149", // pool
+                400: "#4C536B", // card
+                300: "#4C536B", // button
+                hover: "#1638B0",
+            },
+        },
     },
     baseTheme
 );
