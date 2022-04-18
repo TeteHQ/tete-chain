@@ -28,10 +28,10 @@ export default function Header({ title = "Not Found!", onOpen = () => {} }) {
                     size="sm"
                 />
                 <HStack spacing="8" ml="8" d={{ base: "none", md: "flex" }}>
-                    <Link href="/">Realtime Bet</Link>
-                    <Link href="/">Tete Pools</Link>
-                    <Link href="/">NFT Staking</Link>
-                    <Link href="/">Street Wallet</Link>
+                    <Link href="/#live">Realtime Bet</Link>
+                    <Link href="/#pools">Tete Pools</Link>
+                    <Link href="/pools/staking">NFT Staking</Link>
+                    <Link href="/#wallet">Street Wallet</Link>
                 </HStack>
 
                 <Flex alignItems="center" justifyContent="end">
@@ -40,7 +40,7 @@ export default function Header({ title = "Not Found!", onOpen = () => {} }) {
                             options={[{ label: "ENG", color: "tete.900" }]}
                         />
                     </Box>
-                    <Box w="200px" ml="4">
+                    <Box w="200px" ml="4" mr="-8">
                         <Button
                             bg="tete.hover"
                             label="Connect Wallet"

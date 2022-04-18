@@ -44,7 +44,7 @@ export default function SlideCard({ slide, text }) {
                         ""
                     )}
                 </Box>
-                <Box textAlign="right">
+                <Box textAlign="right" d={{ base: "none", md: "flex" }}>
                     <Image my="-16" h="96" src={slide.image} alt="" />
                 </Box>
             </Flex>
