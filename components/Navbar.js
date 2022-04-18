@@ -50,25 +50,43 @@ export default function Navbar(props) {
                     <Text px="4" py="2" fontWeight={"extrabold"}>
                         Navigations
                     </Text>
-                    <NavItem icon={MdHome}>Home</NavItem>
-                    <NavItem icon={FaWifi}>Live</NavItem>
-                    <NavItem icon={FaHeart}>Favourites</NavItem>
+                    <NavItem href="/" icon={MdHome}>
+                        Home
+                    </NavItem>
+                    <NavItem href="/#live" icon={FaWifi}>
+                        Live
+                    </NavItem>
+                    <NavItem href="/" icon={FaHeart}>
+                        Favourites
+                    </NavItem>
                 </Box>
                 <Box mb="8">
                     <Text px="4" py="2" fontWeight={"extrabold"}>
                         Sports
                     </Text>
-                    <NavItem icon={FaFootballBall}>Football</NavItem>
-                    <NavItem icon={FaBasketballBall}>Basketball</NavItem>
-                    <NavItem icon={FaTableTennis}>Tennis</NavItem>
+                    <NavItem href="/pools/realtime" icon={FaFootballBall}>
+                        Football
+                    </NavItem>
+                    <NavItem href="/pools/realtime" icon={FaBasketballBall}>
+                        Basketball
+                    </NavItem>
+                    <NavItem href="/pools/realtime" icon={FaTableTennis}>
+                        Tennis
+                    </NavItem>
                 </Box>
                 <Box>
                     <Text px="4" py="2" fontWeight={"extrabold"}>
                         Entertainment
                     </Text>
-                    <NavItem icon={FaMusic}>Music</NavItem>
-                    <NavItem icon={FaTheaterMasks}>Movies</NavItem>
-                    <NavItem icon={FaAward}>Awards</NavItem>
+                    <NavItem href="/pools/realtime" icon={FaMusic}>
+                        Music
+                    </NavItem>
+                    <NavItem href="/pools/realtime" icon={FaTheaterMasks}>
+                        Movies
+                    </NavItem>
+                    <NavItem href="/pools/realtime" icon={FaAward}>
+                        Awards
+                    </NavItem>
                 </Box>
             </Flex>
         </Box>
