@@ -33,7 +33,7 @@ export default function Header({ title = "Not Found!", onOpen = () => {} }) {
                     size="sm"
                 />
                 <HStack spacing="8" ml="8" d={{ base: "none", md: "flex" }}>
-                    <Link href="/#live">Realtime Bet</Link>
+                    <Link href="/pools/realtime">Realtime Bet</Link>
                     <Link href="/#pools">Tete Pools</Link>
                     <Link href="/pools/staking">NFT Staking</Link>
                     <Link href="/#wallet">Street Wallet</Link>
