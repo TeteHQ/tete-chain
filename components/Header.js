@@ -1,9 +1,14 @@
+import { useState } from "react";
 import Head from "next/head";
 import { Box, HStack, Flex, IconButton } from "@chakra-ui/react";
-import { Button, Link, Select } from "@saas-ui/react";
+import { Button, Link, Select, useSnackbar } from "@saas-ui/react";
 import { FiMenu } from "react-icons/fi";
 
+import { connectWallet } from "../utils/connect";
+
 export default function Header({ title = "Not Found!", onOpen = () => {} }) {
+    const snackbar = useSnackbar();
+    const [account, setAccount] = useState();
     return (
         <>
             <Head>
@@ -43,10 +48,19 @@ export default function Header({ title = "Not Found!", onOpen = () => {} }) {
                     <Box w="200px" ml="4" mr="-8">
                         <Button
                             bg="tete.hover"
-                            label="Connect Wallet"
+                            label={
+                                account
+                                    ? account.substring(0, 14)
+                                    : "Connect Wallet"
+                            }
                             _hover={{
                                 bg: "tete.500",
                             }}
+                            onClick={connectWallet.bind(
+                                {},
+                                setAccount,
+                                snackbar
+                            )}
                         />
                     </Box>
                 </Flex>
