@@ -16,7 +16,9 @@ export default function Realtime({ sidebar }) {
                         direction={{ base: "column", md: "row" }}
                         mt="4"
                         mr={{ base: "4", md: 0 }}
-                    ></Flex>
+                    >
+                        <Image src="/coming_soon.svg" alt="Coming Soon" />
+                    </Flex>
                 </Box>
             </Page>
         </>
