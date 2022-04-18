@@ -6,11 +6,14 @@ import {
     Form,
     FormLayout,
     SubmitButton,
+    useSnackbar,
 } from "@saas-ui/react";
 
 import Page from "../../components/Page";
+import { getContract, prettyError } from "../../utils/contract";
 
 export default function Create({ sidebar }) {
+    const snackbar = useSnackbar();
     return (
         <>
             <Page title="Create a Pool" sidebar={sidebar}>
@@ -94,6 +97,14 @@ export default function Create({ sidebar }) {
                                 <SubmitButton
                                     label="Create Pool"
                                     bg="tete.card"
+                                    onClick={() =>
+                                        getContract().then((contract) =>
+                                            contract.CreateBettingPool()
+                                        ).catch((err) => snackbar({
+                                            description: prettyError(err),
+                                            status: "error",
+                                        }))
+                                    }
                                 />
                             </FormLayout>
                         </Form>
