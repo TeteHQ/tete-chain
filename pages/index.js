@@ -1,9 +1,10 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { Button, Card, DataTable, Link } from "@saas-ui/react";
+import { Button, DataTable, Link } from "@saas-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import EventCard from "../components/EventCard";
+import SlideCard from "../components/SlideCard";
 import Header from "../components/Header";
 import Widget from "../components/Widget";
 
@@ -54,76 +55,7 @@ export default function Home({ sidebar }) {
                 <Box w="full" p="4">
                     <Carousel autoPlay infiniteLoop>
                         {slides.map((slide, index) => (
-                            <Card
-                                key={index}
-                                px="6"
-                                py="12"
-                                w="full"
-                                bg={slide.bg}
-                                color="white"
-                            >
-                                <Flex>
-                                    <Box
-                                        textAlign="left"
-                                        w={{ base: "full", md: "40%" }}
-                                    >
-                                        <Text
-                                            fontSize="xl"
-                                            fontWeight="bold"
-                                            d="block"
-                                            mb="4"
-                                        >
-                                            {slide.intro}
-                                        </Text>
-                                        <Link
-                                            href={slide.buttons[0]?.href || "#"}
-                                        >
-                                            <Button
-                                                bg={
-                                                    slide.bg === "tete.hover"
-                                                        ? "white"
-                                                        : slide.bg
-                                                }
-                                                size="sm"
-                                                label={slide.buttons[0].text}
-                                                color={slide.bg}
-                                                _hover={{
-                                                    bg: "transparent",
-                                                    color: "white",
-                                                }}
-                                            />
-                                        </Link>
-                                        {slide.buttons.length > 1 ? (
-                                            <Link
-                                                href={
-                                                    slide.buttons[1]?.href ||
-                                                    "#"
-                                                }
-                                            >
-                                                <Button
-                                                    ml="4"
-                                                    size="sm"
-                                                    label={
-                                                        slide.buttons[1].text
-                                                    }
-                                                    color="white"
-                                                    bg="transparent"
-                                                    _hover={{
-                                                        bg:
-                                                            slide.bg ===
-                                                            "tete.hover"
-                                                                ? "white"
-                                                                : slide.bg,
-                                                        color: slide.bg,
-                                                    }}
-                                                />
-                                            </Link>
-                                        ) : (
-                                            ""
-                                        )}
-                                    </Box>
-                                </Flex>
-                            </Card>
+                            <SlideCard slide={slide} key={index} />
                         ))}
                     </Carousel>
 
@@ -265,6 +197,35 @@ export default function Home({ sidebar }) {
                                 />
                             </Link>
                         </Box>
+                    </Box>
+                    <Box mt="8">
+                        <SlideCard
+                            slide={{
+                                bg: "tete.card",
+                                intro: "Street Wallet",
+                                buttons: [
+                                    {
+                                        text: "Donate Now",
+                                        bg: "white",
+                                        color: "purple.500",
+                                    },
+                                ],
+                            }}
+                            text={[
+                                <Text key="1">Available Balance</Text>,
+                                <Text
+                                    fontSize="3xl"
+                                    fontWeight="extrabold"
+                                    color="orange"
+                                    key="2"
+                                >
+                                    0.125134 BTC
+                                </Text>,
+                                <Text pl="24" key="3">
+                                    $4962.34
+                                </Text>,
+                            ]}
+                        />
                     </Box>
                 </Box>
                 <Box color="white" w={{ base: "full", md: "30%" }} p="4">
