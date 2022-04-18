@@ -29,6 +29,8 @@ export default function Home({ sidebar }) {
             buttons: [
                 {
                     text: "Donate Now",
+                    bg: "white",
+                    color: "purple.500",
                 },
                 {
                     text: "Learn More",
@@ -221,7 +223,7 @@ export default function Home({ sidebar }) {
                                 >
                                     0.125134 BTC
                                 </Text>,
-                                <Text pl="24" key="3">
+                                <Text pl="24" mb="4" key="3">
                                     $4962.34
                                 </Text>,
                             ]}
@@ -230,10 +232,18 @@ export default function Home({ sidebar }) {
                 </Box>
                 <Box color="white" w={{ base: "full", md: "30%" }} p="4">
                     <Text fontSize="lg" fontWeight="bold" mb="4">
-                        Trending
+                        Trending Stakes
                     </Text>
-                    <Widget title="NFT" href="/" bgImage="/widget1.png" />
-                    <Widget title="NFT" href="/" bgImage="/widget2.png" />
+                    <Widget
+                        title="Monkey NFT"
+                        href="/"
+                        bgImage="/widget1.png"
+                    />
+                    <Widget
+                        title="Bored Ape NFT"
+                        href="/"
+                        bgImage="/widget2.png"
+                    />
                 </Box>
             </Flex>
         </>
