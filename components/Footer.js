@@ -5,7 +5,6 @@ import {
     SimpleGrid,
     Stack,
     Text,
-    useColorModeValue,
 } from "@chakra-ui/react";
 import { Button, Link } from "@saas-ui/react";
 
@@ -25,36 +24,38 @@ export default function Footer() {
                     <Stack spacing={6}>
                         <Box>
                             <Link href="/">
-                                <Image src={"/logo.png"} h="12" alt="Tete" />
+                                <Image src="/logo.png" h="12" alt="Tete" />
                             </Link>
                         </Box>
-                        <Text fontSize={"sm"}>© 2022 All rights reserved</Text>
+                        <Text fontSize="sm">
+                            © 2022 All rights reserved - Buchain
+                        </Text>
                     </Stack>
                     <Stack>
                         <ListHeader>Follow Us</ListHeader>
-                        <Link href={"#"}>Facebook</Link>
-                        <Link href={"#"}>Twitter</Link>
+                        <Link href="#">Facebook</Link>
+                        <Link href="#">Twitter</Link>
                     </Stack>
-                    <Stack align={"flex-start"}>
+                    <Stack align="flex-start">
                         <ListHeader>Realtime Betting</ListHeader>
-                        <Link href={"/pools/realtime"}>Awards</Link>
-                        <Link href={"/pools/realtime"}>Football</Link>
-                        <Link href={"/pools/realtime"}>Music</Link>
-                        <Link href={"/pools/realtime"}>Basketball</Link>
+                        <Link href="/pools/realtime">Awards</Link>
+                        <Link href="/pools/realtime">Football</Link>
+                        <Link href="/pools/realtime">Music</Link>
+                        <Link href="/pools/realtime">Basketball</Link>
                     </Stack>
-                    <Stack align={"flex-start"}>
+                    <Stack align="flex-start">
                         <ListHeader>NFT Staking</ListHeader>
-                        <Link href={"/pools/staking"}>Crypto Punk</Link>
-                        <Link href={"/pools/staking"}>Azuki</Link>
-                        <Link href={"/pools/staking"}>Doodle</Link>
-                        <Link href={"/pools/staking"}>Vee Friends</Link>
+                        <Link href="/pools/staking">Crypto Punk</Link>
+                        <Link href="/pools/staking">Azuki</Link>
+                        <Link href="/pools/staking">Doodle</Link>
+                        <Link href="/pools/staking">Vee Friends</Link>
                     </Stack>
-                    <Stack align={"flex-start"}>
+                    <Stack align="flex-start">
                         <ListHeader>Tete Pools</ListHeader>
-                        <Link href={"#"}>Join a Pool</Link>
-                        <Link href={"/pools/create"}>Create a Pool</Link>
+                        <Link href="#">Join a Pool</Link>
+                        <Link href="/pools/create">Create a Pool</Link>
                     </Stack>
-                    <Stack align={"flex-start"}>
+                    <Stack align="flex-start">
                         <ListHeader>Street Wallet</ListHeader>
                         <Button
                             bg="tete.hover"
