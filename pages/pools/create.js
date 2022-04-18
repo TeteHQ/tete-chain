@@ -1,5 +1,12 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { Field, Form, FormLayout, Link } from "@saas-ui/react";
+import {
+    Button,
+    DisplayIf,
+    Field,
+    Form,
+    FormLayout,
+    SubmitButton,
+} from "@saas-ui/react";
 
 import Page from "../../components/Page";
 
@@ -46,6 +53,36 @@ export default function Create({ sidebar }) {
                                     ]}
                                     label="No. Outcome"
                                 />
+
+                                <Flex
+                                    mt="4"
+                                    alignItems="center"
+                                    justifyContent="space-around"
+                                >
+                                    <Button
+                                        label="W"
+                                        fontSize="xl"
+                                        bg="gray.500"
+                                        _hover={{ bg: "tete.hover" }}
+                                    />
+                                    <DisplayIf
+                                        name="outcome"
+                                        condition={(value) => value == 3}
+                                    >
+                                        <Button
+                                            label="D"
+                                            fontSize="xl"
+                                            bg="gray.500"
+                                            _hover={{ bg: "tete.hover" }}
+                                        />
+                                    </DisplayIf>
+                                    <Button
+                                        label="L"
+                                        fontSize="xl"
+                                        bg="gray.500"
+                                        _hover={{ bg: "tete.hover" }}
+                                    />
+                                </Flex>
                                 <Field
                                     name="amount"
                                     type="number"
@@ -53,6 +90,10 @@ export default function Create({ sidebar }) {
                                     defaultValue={5}
                                     min={5}
                                     required
+                                />
+                                <SubmitButton
+                                    label="Create Pool"
+                                    bg="tete.card"
                                 />
                             </FormLayout>
                         </Form>
