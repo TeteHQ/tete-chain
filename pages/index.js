@@ -13,6 +13,7 @@ export default function Home({ sidebar }) {
         {
             bg: "tete.hover",
             intro: "Welcome to Tété, we are using Betting as an Instrument of Social Change.",
+            image: "/header.png",
             buttons: [
                 {
                     text: "Create Pool",
@@ -26,6 +27,7 @@ export default function Home({ sidebar }) {
         {
             bg: "tete.card",
             intro: "Everytime you WIN, Someone on the streets also WIN. Together , let’s take Young Girls and Boys off the street.",
+            image: "/grammy.png",
             buttons: [
                 {
                     text: "Donate Now",
@@ -200,11 +202,12 @@ export default function Home({ sidebar }) {
                             </Link>
                         </Box>
                     </Box>
-                    <Box mt="8">
+                    <Box my="8">
                         <SlideCard
                             slide={{
                                 bg: "tete.card",
                                 intro: "Street Wallet",
+                                image: "/wallet.png",
                                 buttons: [
                                     {
                                         text: "Donate Now",

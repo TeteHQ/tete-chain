@@ -1,10 +1,10 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { Button, Card, Link } from "@saas-ui/react";
 
 export default function SlideCard({ slide, text }) {
     return (
         <Card px="6" py="12" w="full" bg={slide.bg} color="white">
-            <Flex>
+            <Flex alignItems="center" justifyContent="space-between">
                 <Box textAlign="left" w={{ base: "full", md: "40%" }}>
                     <Text fontSize="xl" fontWeight="bold" d="block" mb="4">
                         {slide.intro}
@@ -43,6 +43,9 @@ export default function SlideCard({ slide, text }) {
                     ) : (
                         ""
                     )}
+                </Box>
+                <Box textAlign="right">
+                    <Image my="-16" h="96" src={slide.image} alt="" />
                 </Box>
             </Flex>
         </Card>
