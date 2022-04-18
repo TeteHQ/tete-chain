@@ -19,6 +19,7 @@ export const theme = extendTheme(
                 400: "#4C536B", // card
                 300: "#4C536B", // button
                 hover: "#1638B0",
+                card: "linear-gradient(258.69deg, #1638B0 1.51%, #7107B1 49.81%)",
             },
         },
     },
