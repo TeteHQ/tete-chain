@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { Button, Card, Link } from "@saas-ui/react";
+import { Button, Card, DataTable, Link } from "@saas-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -11,7 +11,7 @@ export default function Home({ sidebar }) {
     const slides = [
         {
             bg: "tete.hover",
-            intro: "Welcome to Tété, we are using Betting as an Instrument of Change",
+            intro: "Welcome to Tété, we are using Betting as an Instrument of Social Change.",
             buttons: [
                 {
                     text: "Create Pool",
@@ -75,36 +75,49 @@ export default function Home({ sidebar }) {
                                         >
                                             {slide.intro}
                                         </Text>
-                                        <Button
-                                            bg={
-                                                slide.bg === "tete.hover"
-                                                    ? "white"
-                                                    : slide.bg
-                                            }
-                                            size="sm"
-                                            label={slide.buttons[0].text}
-                                            color={slide.bg}
-                                            _hover={{
-                                                bg: "transparent",
-                                                color: "white",
-                                            }}
-                                        />
-                                        {slide.buttons.length > 1 ? (
+                                        <Link
+                                            href={slide.buttons[0]?.href || "#"}
+                                        >
                                             <Button
-                                                ml="4"
+                                                bg={
+                                                    slide.bg === "tete.hover"
+                                                        ? "white"
+                                                        : slide.bg
+                                                }
                                                 size="sm"
-                                                label={slide.buttons[1].text}
-                                                color="white"
-                                                bg="transparent"
+                                                label={slide.buttons[0].text}
+                                                color={slide.bg}
                                                 _hover={{
-                                                    bg:
-                                                        slide.bg ===
-                                                        "tete.hover"
-                                                            ? "white"
-                                                            : slide.bg,
-                                                    color: slide.bg,
+                                                    bg: "transparent",
+                                                    color: "white",
                                                 }}
                                             />
+                                        </Link>
+                                        {slide.buttons.length > 1 ? (
+                                            <Link
+                                                href={
+                                                    slide.buttons[1]?.href ||
+                                                    "#"
+                                                }
+                                            >
+                                                <Button
+                                                    ml="4"
+                                                    size="sm"
+                                                    label={
+                                                        slide.buttons[1].text
+                                                    }
+                                                    color="white"
+                                                    bg="transparent"
+                                                    _hover={{
+                                                        bg:
+                                                            slide.bg ===
+                                                            "tete.hover"
+                                                                ? "white"
+                                                                : slide.bg,
+                                                        color: slide.bg,
+                                                    }}
+                                                />
+                                            </Link>
                                         ) : (
                                             ""
                                         )}
@@ -116,7 +129,7 @@ export default function Home({ sidebar }) {
 
                     <Box py="2">
                         <Flex justifyContent="space-between" color="white">
-                            <Text fontSize="xl" fontWeight="bold">
+                            <Text id="live" fontSize="xl" fontWeight="bold">
                                 Live Events
                             </Text>
                             <Button
@@ -139,6 +152,119 @@ export default function Home({ sidebar }) {
                             <EventCard isLive={false} />
                             <EventCard isLive={true} />
                         </Flex>
+                    </Box>
+                    <Box mt="8">
+                        <Flex justifyContent="space-between" color="white">
+                            <Text id="pools" fontSize="xl" fontWeight="bold">
+                                Tete Pools
+                            </Text>
+                            <Button
+                                label="All Events"
+                                size="small"
+                                fontSize="sm"
+                                bg="gray.500"
+                                px="4"
+                                _hover={{
+                                    bg: "gray.600",
+                                }}
+                            />
+                        </Flex>
+                        <Box color="white" overflowX="auto" mt="2">
+                            <DataTable
+                                columns={[
+                                    { id: "creator", Header: "Creator" },
+                                    { id: "time", Header: "Time" },
+                                    { id: "event", Header: "Event" },
+                                    { id: "prediction", Header: "Prediction" },
+                                    { id: "actions" },
+                                ]}
+                                data={[
+                                    {
+                                        creator: "John Doe",
+                                        time: "12:00",
+                                        event: "Grammy Awards",
+                                        prediction: "Nominee",
+                                        actions: (
+                                            <Button
+                                                size="sm"
+                                                color="gray.800"
+                                                label="Place Bet"
+                                            />
+                                        ),
+                                    },
+                                    {
+                                        creator: "John Doe",
+                                        time: "12:00",
+                                        event: "Grammy Awards",
+                                        prediction: "Nominee",
+                                        actions: (
+                                            <Button
+                                                size="sm"
+                                                color="gray.800"
+                                                label="Place Bet"
+                                            />
+                                        ),
+                                    },
+                                    {
+                                        creator: "John Doe",
+                                        time: "12:00",
+                                        event: "Grammy Awards",
+                                        prediction: "Nominee",
+                                        actions: (
+                                            <Button
+                                                size="sm"
+                                                color="gray.800"
+                                                label="Place Bet"
+                                            />
+                                        ),
+                                    },
+                                    {
+                                        creator: "John Doe",
+                                        time: "12:00",
+                                        event: "Grammy Awards",
+                                        prediction: "Nominee",
+                                        actions: (
+                                            <Button
+                                                size="sm"
+                                                color="gray.800"
+                                                label="Place Bet"
+                                            />
+                                        ),
+                                    },
+                                    {
+                                        creator: "John Doe",
+                                        time: "12:00",
+                                        event: "Grammy Awards",
+                                        prediction: "Nominee",
+                                        actions: (
+                                            <Button
+                                                size="sm"
+                                                color="gray.800"
+                                                label="Place Bet"
+                                            />
+                                        ),
+                                    },
+                                ]}
+                                isSortable
+                                isSelectable
+                            />
+                        </Box>
+                        <Box textAlign="right">
+                            <Link href="/pools/create">
+                                <Button
+                                    bg="tete.card"
+                                    label="Create Pool"
+                                    mt="4"
+                                    color="white"
+                                    size="sm"
+                                    px="6"
+                                    _hover={{
+                                        bg: "tete.card",
+                                        border: "1px",
+                                    }}
+                                />
+                            </Link>
+                        </Box>
                     </Box>
                 </Box>
                 <Box color="white" w={{ base: "full", md: "30%" }} p="4">
