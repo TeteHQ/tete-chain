@@ -77,19 +77,19 @@ export default function EventCard({
                             label="W"
                             fontSize="xl"
                             bg="gray.500"
-                            _hover={{ bg: "gray.700" }}
+                            _hover={{ bg: "tete.hover" }}
                         />
                         <Button
                             label="D"
                             fontSize="xl"
                             bg="gray.500"
-                            _hover={{ bg: "gray.700" }}
+                            _hover={{ bg: "tete.hover" }}
                         />
                         <Button
                             label="L"
                             fontSize="xl"
                             bg="gray.500"
-                            _hover={{ bg: "gray.700" }}
+                            _hover={{ bg: "tete.hover" }}
                         />
                     </Flex>
                 </CardBody>
