@@ -27,7 +27,7 @@ export default function Home({ sidebar }) {
         {
             bg: "tete.card",
             intro: "Everytime you WIN, Someone on the streets also WIN. Together , let’s take Young Girls and Boys off the street.",
-            image: "/grammy.png",
+            image: "/wallet.png",
             buttons: [
                 {
                     text: "Donate Now",
@@ -42,6 +42,7 @@ export default function Home({ sidebar }) {
         {
             bg: "tete.hover",
             intro: "From Grammy, BET Awards, Oscars, You can now stake on your Favourite nominee from any Category.",
+            image: "/grammy.png",
             buttons: [
                 {
                     text: "Start Here",
