@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SlideCard from "./SlideCard";
 import Header from "./Header";
 import Widget from "./Widget";
+import EventCardRightWidget from "./SportsRightWidget";
 
 export default function Page({ sidebar, title, children }) {
     const slides = [
@@ -64,14 +65,15 @@ export default function Page({ sidebar, title, children }) {
                     {children}
                 </Box>
                 <Box color="white" w={{ base: "full", md: "30%" }} p="4">
-                    <Text fontSize="lg" fontWeight="bold" mb="4">
-                        Trending Stakes
+                    <Text fontSize="md" fontWeight="normal" mb="4">
+                        Trending
                     </Text>
                     <Widget
                         title="Monkey NFT"
                         href="/"
                         bgImage="/widget1.png"
                     />
+                    <EventCardRightWidget />
                     <Widget
                         title="Bored Ape NFT"
                         href="/"

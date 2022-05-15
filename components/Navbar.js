@@ -33,7 +33,7 @@ export default function Navbar(props) {
         >
             <Flex px="4" py="5" align="center">
                 <Link href="/">
-                    <Image src={"/logo.png"} h="6" alt="Tete" />
+                    <Image src={"/logo.png"} h="10" alt="Tete" />
                 </Link>
             </Flex>
             <Flex
