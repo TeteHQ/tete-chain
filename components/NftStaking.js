@@ -26,6 +26,7 @@ export default function Widget({
           {children}
         </Card>
       </Link>
+      
       <Box
         mb="0.5"
         bg="gray.600"
@@ -35,17 +36,25 @@ export default function Widget({
         p="2"
         textColor="white"
       >
+        {/* #####################Details Block##################### */}
         <Flex fontSize="xs" justifyContent="space-between">
           <Text fontWeight="thin">{title}</Text>
+
           <Text fontWeight="thin">{price}</Text>
         </Flex>
+        {/* Description and value block */}
         <Flex fontSize="sm" justifyContent="space-between">
           <Text fontWeight="extrabold">{description}</Text>
-          <Spacer/>
-          <Image boxSize='20px' src={chainLogo} alt='eth' />
+
+          <Spacer />
+
+          <Image boxSize="20px" src={chainLogo} alt="eth" />
+
           <Text fontWeight="extrabold"> {value}</Text>
         </Flex>
       </Box>
+
+      {/* Stake Now button */}
       <Button bgColor="#1638B0" w="full" roundedTop="none" _hover="none">
         <Text textColor="white" fontWeight="extrabold">
           Stake Now
