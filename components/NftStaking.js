@@ -36,13 +36,11 @@ export default function Widget({
         p="2"
         textColor="white"
       >
-        {/* #####################Details Block##################### */}
         <Flex fontSize="xs" justifyContent="space-between">
           <Text fontWeight="thin">{title}</Text>
 
           <Text fontWeight="thin">{price}</Text>
         </Flex>
-        {/* Description and value block */}
         <Flex fontSize="sm" justifyContent="space-between">
           <Text fontWeight="extrabold">{description}</Text>
 
@@ -54,7 +52,6 @@ export default function Widget({
         </Flex>
       </Box>
 
-      {/* Stake Now button */}
       <Button bgColor="#1638B0" w="full" roundedTop="none" _hover="none">
         <Text textColor="white" fontWeight="extrabold">
           Stake Now
