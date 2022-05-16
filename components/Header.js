@@ -31,6 +31,7 @@ export default function Header({ title = "Not Found!", onOpen = () => {} }) {
                     onClick={onOpen}
                     icon={<FiMenu />}
                     size="sm"
+                    color="gray.500"
                 />
                 <HStack spacing="8" ml="8" d={{ base: "none", md: "flex" }}>
                     <Link href="/pools/realtime">Realtime Bet</Link>
