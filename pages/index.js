@@ -1,9 +1,10 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, SimpleGrid} from "@chakra-ui/react";
 import { Button, DataTable, Link } from "@saas-ui/react";
 
 import Page from "../components/Page";
 import EventCard from "../components/EventCard";
 import SlideCard from "../components/SlideCard";
+import NftStaking from "../components/NftStaking"
 
 export default function Home({ sidebar }) {
     return (
@@ -146,6 +147,71 @@ export default function Home({ sidebar }) {
                         />
                     </Link>
                 </Box>
+            </Box>
+            <Box>
+            <SimpleGrid columns={[2, null, 3]} spacing={5} py="2">
+          <NftStaking
+            id='1'
+            title="Crypto Punk"
+            price="Price"
+            description="PunkEE Punk"
+            chainLogo="/eth.png"
+            value="0.004"
+            href="/"
+            bgImage="/widget1.png"
+          />
+          <NftStaking
+          id='2'
+            title="Crypto Punk"
+            price="Price"
+            description="PunkEE Punk"
+            chainLogo="/eth.png"
+            value="0.004"
+            href="/"
+            bgImage="/widget2.png"
+          />
+          <NftStaking
+          id='3'
+            title="Crypto Punk"
+            price="Price"
+            description="PunkEE Punk"
+            chainLogo="/eth.png"
+            value="0.004"
+            href="/"
+            bgImage="/widget1.png"
+          />
+          <NftStaking
+          id='4'
+            title="Crypto Punk"
+            price="Price"
+            description="PunkEE Punk"
+            chainLogo="/eth.png"
+            value="0.004"
+            href="/"
+            bgImage="/widget2.png"
+          />
+          <NftStaking
+          id='5'
+            title="Crypto Punk"
+            price="Price"
+            description="PunkEE Punk"
+            chainLogo="/eth.png"
+            value="0.004"
+            href="/"
+            bgImage="/widget1.png"
+          />
+          <NftStaking
+          id='6'
+            title="Crypto Punk"
+            price="Price"
+            description="PunkEE Punk"
+            chainLogo="/eth.png"
+            value="0.004"
+            href="/"
+            bgImage="/widget2.png"
+          />
+         
+        </SimpleGrid>
             </Box>
             <Box my="8" id="wallet">
                 <SlideCard

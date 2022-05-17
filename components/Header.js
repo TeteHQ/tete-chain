@@ -6,13 +6,9 @@ import {
   Flex,
   IconButton,
   useDisclosure,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-} from "@chakra-ui/react";
+  } from "@chakra-ui/react";
 import { Button, Link, Select, useSnackbar } from "@saas-ui/react";
 import { FiMenu } from "react-icons/fi";
-import Navbar from "./Navbar";
 
 import { connectWallet } from "../utils/connect";
 import NavDrawer from "./NavDrawer";
