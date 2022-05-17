@@ -88,6 +88,14 @@ export default function Navbar(props) {
                         Awards
                     </NavItem>
                 </Box>
+                <Box>
+                <NavItem fontWeight={"extrabold"} href="/pools/staking" fontSize='md'>
+                        NFT Staking
+                    </NavItem>
+                    <NavItem fontWeight={"extrabold"} href="/#pools" fontSize='md'>
+                        Tete Pools
+                    </NavItem>
+                </Box>
             </Flex>
         </Box>
     );

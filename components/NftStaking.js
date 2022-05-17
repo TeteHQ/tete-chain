@@ -3,6 +3,7 @@ import { Card, Link } from "@saas-ui/react";
 
 export default function Widget({
   href,
+  id,
   title,
   value,
   description,
@@ -11,7 +12,27 @@ export default function Widget({
   children,
   ...rest
 }) {
-  return (
+  const clicked = async () => {
+    const data = { title, description, id, chainLogo, value };
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/nfts";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSONdata,
+    };
+    const response = await fetch(endpoint, options);
+    const result = await response.json();
+    console.log(result);
+    
+  };
+ 
+
+  return (<>
+
+
     <Box m="2">
       <Link href={href}>
         <Card
@@ -52,11 +73,17 @@ export default function Widget({
         </Flex>
       </Box>
 
-      <Button bgColor="#1638B0" w="full" roundedTop="none" _hover="none">
+      <Link href={`/pools/staking/${id}`}>
+      <Button onClick={clicked} bgColor="#1638B0" w="full" roundedTop="none" _hover="none">
         <Text textColor="white" fontWeight="extrabold">
           Stake Now
         </Text>
       </Button>
+      </Link>
+      
     </Box>
+
+  </>
+    
   );
 }
