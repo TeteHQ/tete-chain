@@ -1,0 +1,72 @@
+export const nfts=[
+{
+    id:1,
+    title:"Crypto Punk",
+    description:"PunkEE Punk",
+    chainLogo:"/eth.png",
+    value:"0.001",
+    href:"/",
+    bgImage:"/widget1.png",
+},
+{
+    id:2,
+    title:"Crypto Punk",
+    description:"PunkEE Punk",
+    chainLogo:"/eth.png",
+    value:"0.002",
+    href:"/",
+    bgImage:"/widget2.png",
+},{
+    id:3,
+    title:"Crypto Punk",
+    description:"PunkEE Punk",
+    chainLogo:"/eth.png",
+    value:"0.003",
+    href:"/",
+    bgImage:"/widget3.png",
+},{
+    id:4,
+    title:"Crypto Punk",
+    description:"PunkEE Punk",
+    chainLogo:"/eth.png",
+    value:"0.004",
+    href:"/",
+    bgImage:"/widget4.png",
+},{
+    id:5,
+    title:"Crypto Punk",
+    description:"PunkEE Punk",
+    chainLogo:"/eth.png",
+    value:"0.005",
+    href:"/",
+    bgImage:"/widget5.png",
+},
+{
+    id:6,
+    title:"Crypto Punk",
+    description:"PunkEE Punk",
+    chainLogo:"/eth.png",
+    value:"0.006",
+    href:"/",
+    bgImage:"/widget6.png",
+},{
+    id:7,
+    title:"Crypto Punk",
+    description:"PunkEE Punk",
+    chainLogo:"/eth.png",
+    value:"0.007",
+    href:"/",
+    bgImage:"/widget7.png",
+},{
+    id:8,
+    title:"Crypto Punk",
+    description:"PunkEE Punk",
+    chainLogo:"/eth.png",
+    value:"0.008",
+    href:"/",
+    bgImage:"/widget2.png",
+},
+
+
+]
+
