@@ -19,6 +19,7 @@ specifiers:
   react-dom: 18.0.0
   react-icons: ^4.3.1
   react-responsive-carousel: ^3.2.23
+  swr: ^1.3.0
   web3modal: ^1.9.6
 
 dependencies:
@@ -38,6 +39,7 @@ dependencies:
   react-dom: 18.0.0_react@18.0.0
   react-icons: 4.3.1_react@18.0.0
   react-responsive-carousel: 3.2.23
+  swr: 1.3.0_react@18.0.0
   web3modal: 1.9.6
 
 devDependencies:
@@ -5828,6 +5830,14 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /swr/1.3.0_react@18.0.0:
+    resolution: {integrity: sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.0.0
+    dev: false
 
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
