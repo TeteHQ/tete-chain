@@ -1,7 +1,9 @@
 import { Box, Button, Flex, Text, Image, Spacer } from "@chakra-ui/react";
-import { Card, Link } from "@saas-ui/react";
+import { Card } from "@saas-ui/react";
+import Link from "next/link";
 
 export default function NftStake({
+  nft,
   href,
   id,
   title,
@@ -54,12 +56,15 @@ export default function NftStake({
         </Flex>
       </Box>
 
-      <Link href={`/pools/staking/${id}`}>
+      <Link href="/pools/staking/[id]" as={`/pools/staking/${nft.id}`}>
+      <a>
       <Button bgColor="#1638B0" w="full" roundedTop="none" _hover="none">
         <Text textColor="white" fontWeight="extrabold">
           Stake Now
         </Text>
       </Button>
+      </a>
+      
       </Link>
       
     </Box>

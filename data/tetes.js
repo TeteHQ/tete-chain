@@ -15,7 +15,7 @@ export const tetes = [
     league: "English Premier League",
     date: "19th May",
     time: "7pm",
-    item: "Will Chelsea beat Man. United?",
+    item: "Will Liverpool beat Arsenal?",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const tetes = [
     league: "English Premier League",
     date: "19th May",
     time: "7pm",
-    item: "Will Chelsea beat Man. United?",
+    item: "Will Liverpool beat Arsenal?",
   },
   {
     id: 5,

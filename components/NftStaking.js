@@ -1,30 +1,29 @@
 import {  SimpleGrid } from "@chakra-ui/react";
 
 import NftStake from "./NftStake";
-import { useEffect, useState } from "react";
+import useSWR from 'swr'
+
+
+const fetcher = (url) => fetch(url).then((res) => res.json())
+
 
 export default function NftStaking() {
 
-  const [nfts, setNfts]=useState([])
-    
-    const fetchNfts= async()=>{
-      const res= await fetch('/api/nfts')
-      const data = await res.json()
-      setNfts(data)
-    }
+  const { data, error } = useSWR('/api/nfts', fetcher)
 
-    useEffect(()=>{
-      fetchNfts()
-    },[])
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
+
+  
   return (
     <>
         
 
         <SimpleGrid columns={[2, null, 3]} spacing={5} py="2">
-          {nfts.map((nft)=>{
-            return(
+          {data.map((nft,i)=>
+            (
               <>
-              <NftStake
+              <NftStake key={i} nft={nft}
             id={nft.id}
             title={nft.title}
             description={nft.description}
@@ -35,7 +34,7 @@ export default function NftStaking() {
           />
             </>  
             )
-          })}       
+          )}       
 
         </SimpleGrid>  
     </>

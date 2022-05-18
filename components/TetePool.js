@@ -3,17 +3,9 @@ import {
   Button,
   Flex,
   Text,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  Lorem
+  
 } from "@chakra-ui/react";
-import { Link, ModalsProvider, useModals } from "@saas-ui/react";
+import { useModals } from "@saas-ui/react";
 import PlaceBetModal from "./PlaceBetModal";
 
 
@@ -85,7 +77,7 @@ export default function TetePool({
           </Box>
         </Box>
 
-        {/* <Link href={`/tetepools/${id}`}> */}
+       
         <Button
           onClick={() =>
         modals.open({
@@ -102,7 +94,7 @@ export default function TetePool({
         >
             Place Bet
         </Button>
-        {/* </Link> */}
+      
         
       </Box>
     </>
