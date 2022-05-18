@@ -44,7 +44,7 @@ export default function Header({ title = "Not Found!" }) {
         <NavDrawer open={sidebar.isOpen} close={sidebar.onClose}/>
         <HStack spacing="8" ml="8" d={{ base: "none", md: "flex" }}>
           <Link href="/pools/realtime">Realtime Bet</Link>
-          <Link href="/#pools">Tete Pools</Link>
+          <Link href="/tetepools">Tete Pools</Link>
           <Link href="/pools/staking">NFT Staking</Link>
           <Link href="/#wallet">Street Wallet</Link>
         </HStack>
@@ -54,15 +54,15 @@ export default function Header({ title = "Not Found!" }) {
             <Select options={[{ label: "ENG", color: "tete.900" }]} />
           </Box>
           <Box w="200px" ml="4" mr="-8">
-            <Button
-              bg="tete.hover"
-              label={account ? account.substring(0, 14) : "Connect Wallet"}
-              _hover={{
-                bg: "tete.500",
-              }}
-              onClick={connectWallet.bind({}, setAccount, snackbar)}
-            />
-          </Box>
+    <Button
+      bg="tete.hover"
+      label={account ? account.substring(0, 14) : "Connect Wallet"}
+      _hover={{
+        bg: "tete.500",
+      }}
+      onClick={connectWallet.bind({}, setAccount, snackbar)}
+    />
+  </Box>
         </Flex>
       </Flex>
     </>
