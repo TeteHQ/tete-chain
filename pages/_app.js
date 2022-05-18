@@ -13,7 +13,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { theme } from "../utils/theme";
 import { supabaseService } from "../utils/supabase";
-import NavDrawer from "../components/NavDrawer";
 
 // Saas UI components will use the Next Link Wrapper.
 const NextLink = (props) => <Link passHref {...props} />;
