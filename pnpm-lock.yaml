@@ -5295,7 +5295,7 @@ packages:
         optional: true
     dependencies:
       react: 18.0.0
-      react-style-singleton: 2.1.1_react@18.0.0
+      react-style-singleton: 2.2.0_react@18.0.0
       tslib: 1.14.1
     dev: false
 
@@ -5339,6 +5339,22 @@ packages:
       invariant: 2.2.4
       react: 18.0.0
       tslib: 1.14.1
+    dev: false
+
+  /react-style-singleton/2.2.0_react@18.0.0:
+    resolution: {integrity: sha512-nK7mN92DMYZEu3cQcAhfwE48NpzO5RpxjG4okbSqRRbfal9Pk+fG2RdQXTMp+f6all1hB9LIJSt+j7dCYrU11g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      get-nonce: 1.0.1
+      invariant: 2.2.4
+      react: 18.0.0
+      tslib: 2.3.1
     dev: false
 
   /react-table/7.7.0_react@18.0.0:
