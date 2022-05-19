@@ -3,8 +3,8 @@ import { Box, HStack, Flex, IconButton } from "@chakra-ui/react";
 import { Button, Link, Select } from "@saas-ui/react";
 import { FiMenu } from "react-icons/fi";
 
-import NavDrawer from "./NavDrawer";
-import { useWallet } from "../utils";
+import Drawer from "./Navigation/Drawer";
+import { useWallet } from "../../utils";
 import { useEffect } from "react";
 
 export default function Header({ title = "Not Found!", sidebar }) {
@@ -41,7 +41,7 @@ export default function Header({ title = "Not Found!", sidebar }) {
                     size="sm"
                     color="gray.500"
                 />
-                <NavDrawer open={sidebar.isOpen} close={sidebar.onClose} />
+                <Drawer open={sidebar.isOpen} close={sidebar.onClose} />
                 <HStack spacing="8" ml="8" d={{ base: "none", md: "flex" }}>
                     <Link href="/pools/realtime">Realtime Bet</Link>
                     <Link href="/tetepools">Tete Pools</Link>

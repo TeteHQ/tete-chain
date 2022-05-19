@@ -2,11 +2,11 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import SlideCard from "./SlideCard";
+import SlideCard from "../Cards/Slide";
 import Header from "./Header";
 import Footer from "./Footer";
-import Widget from "./Widget";
-import EventCardRightWidget from "./SportsRightWidget";
+import Widget from "../Widgets/Base";
+import SportWidget from "../Widgets/Sport";
 
 export default function Page({ sidebar, title, children }) {
     const slides = [
@@ -70,7 +70,7 @@ export default function Page({ sidebar, title, children }) {
                     {children}
                 </Box>
                 <Box
-                    pos="fixed"
+                    pos={{ md: "fixed" }}
                     right="0"
                     color="white"
                     w={{ base: "full", md: "20%" }}
@@ -84,7 +84,7 @@ export default function Page({ sidebar, title, children }) {
                         href="/"
                         bgImage="/widget1.png"
                     />
-                    <EventCardRightWidget />
+                    <SportWidget />
                     <Widget
                         title="Bored Ape NFT"
                         href="/"

@@ -26,8 +26,7 @@ export function useWallet({ sync = false, auto = true } = {}) {
             provider
                 .ethers(network)
                 .catch(() => snackbar("Failed to connect to the network"))
-                .then(setProvider)
-                .then(() => snackbar("Wallet connected successfully!"));
+                .then(setProvider);
     }, [sync, network, setProvider]);
 
     const disconnectWallet = useCallback(() => {
@@ -47,12 +46,15 @@ export function useWallet({ sync = false, auto = true } = {}) {
     }, [auto, connectWallet]);
 
     useEffect(() => {
-        ethProvider?.listAccounts().then(setAccount);
-    }, [ethProvider, setAccount]);
+        ethProvider
+            ?.listAccounts()
+            .then(setAccount)
+            .then(() => snackbar("Wallet connected successfully!"));
+    }, [ethProvider?.listAccounts, setAccount]);
 
     useEffect(() => {
         if (connected) ethProvider?.getBalance(connected).then(setBalance);
-    }, [ethProvider, account, connected, setBalance]);
+    }, [ethProvider?.getBalance, account, connected, setBalance]);
 
     return {
         balance,

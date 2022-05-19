@@ -1,15 +1,14 @@
-import { Box, Flex, Text} from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { Button, Link } from "@saas-ui/react";
 import { useState, useEffect } from "react";
 
-import Page from "../components/Page";
-import EventCard from "../components/EventCard";
-import SlideCard from "../components/SlideCard";
-import NftStaking from "../components/NftStaking"
+import Page from "../components/Layouts/Page";
+import EventCard from "../components/Cards/Event";
+import SlideCard from "../components/Cards/Slide";
+import StakeList from "../components/Modules/StakeList";
 import TetePools from "../components/TetePools";
 
-export default function Home({ sidebar }) {    
-
+export default function Home({ sidebar }) {
     return (
         <Page sidebar={sidebar} title="Home">
             <Box py="2">
@@ -54,10 +53,10 @@ export default function Home({ sidebar }) {
                         }}
                     />
                 </Flex>
-                <Box mb='2'>
-                    <TetePools/>
+                <Box mb="2">
+                    <TetePools />
                 </Box>
-                
+
                 <Box textAlign="right">
                     <Link href="/pools/create">
                         <Button
@@ -75,15 +74,13 @@ export default function Home({ sidebar }) {
                     </Link>
                 </Box>
             </Box>
-            <Box> 
-            <Box mt='4' mb='2' justifyContent="space-between" color="white">
+            <Box>
+                <Box mt="4" mb="2" justifyContent="space-between" color="white">
                     <Text fontSize="xl" fontWeight="bold">
                         NFT Staking
-                    </Text>           
-           </Box>
-              <NftStaking/>
-              
-         
+                    </Text>
+                </Box>
+                <StakeList />
             </Box>
             <Box my="8" id="wallet">
                 <SlideCard

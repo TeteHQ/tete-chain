@@ -1,9 +1,8 @@
 import { Box, useDisclosure } from "@chakra-ui/react";
-
-import Link from "next/link";
 import { SaasProvider, ModalsProvider } from "@saas-ui/react";
+import Link from "next/link";
 
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Layouts/Navigation/Navbar";
 import { theme } from "../utils/theme";
 import { Provider } from "../utils/context";
 

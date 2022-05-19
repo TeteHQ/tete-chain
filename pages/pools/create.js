@@ -41,7 +41,7 @@ export default function Create({ sidebar }) {
                                 <Field
                                     name="outcome"
                                     type="native-select"
-                                    w='15vh'
+                                    w="15vh"
                                     options={[
                                         { value: 2, color: "black" },
                                         { value: 3 },
@@ -56,19 +56,16 @@ export default function Create({ sidebar }) {
                                 />
                                 <Field
                                     name="event"
-                                    type="text"                                    
+                                    type="text"
                                     label="Event"
                                     placeholder="Will Chelsea beat Manchester United"
-
                                 />
 
                                 <Flex
                                     mt="4"
                                     alignItems="center"
                                     justifyContent="space-around"
-                                >
-                                    
-                                </Flex>
+                                ></Flex>
                                 <Field
                                     name="amount"
                                     type="number"
@@ -76,18 +73,24 @@ export default function Create({ sidebar }) {
                                     defaultValue={5}
                                     min={5}
                                     required
-                                    w='25vh'
+                                    w="25vh"
                                 />
                                 <SubmitButton
                                     label="Create Pool"
                                     bg="tete.card"
                                     onClick={() =>
-                                        getContract().then((contract) =>
-                                            contract.CreateBettingPool()
-                                        ).catch((err) => snackbar({
-                                            description: prettyError(err),
-                                            status: "error",
-                                        }))
+                                        getContract()
+                                            .then((contract) =>
+                                                contract.CreateBettingPool()
+                                            )
+                                            .catch((err) =>
+                                                snackbar({
+                                                    description: prettyError(
+                                                        err
+                                                    ),
+                                                    status: "error",
+                                                })
+                                            )
                                     }
                                 />
                             </FormLayout>

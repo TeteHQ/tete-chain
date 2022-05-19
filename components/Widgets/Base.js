@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { Card, Link } from "@saas-ui/react";
 
-export default function Widget({ href, title, children, ...rest }) {
+export default function Base({ href, title, children, ...rest }) {
     return (
         <Box my="2">
             <Link href={href}>
@@ -10,9 +10,9 @@ export default function Widget({ href, title, children, ...rest }) {
                 </Card>
             </Link>
             <Box textAlign="right">
-            <Text as="i" fontSize="sm" fontWeight="extrabold">
-                {title}
-            </Text>
+                <Text as="i" fontSize="sm" fontWeight="extrabold">
+                    {title}
+                </Text>
             </Box>
         </Box>
     );

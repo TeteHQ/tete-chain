@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Button, Link } from "@saas-ui/react";
 
-import { useWallet } from "../utils";
+import { useWallet } from "../../utils";
 
 const ListHeader = ({ children }) => {
     return (
