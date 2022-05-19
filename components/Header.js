@@ -3,6 +3,7 @@ import { Box, HStack, Flex, IconButton } from "@chakra-ui/react";
 import { Button, Link, Select } from "@saas-ui/react";
 import { FiMenu } from "react-icons/fi";
 
+import NavDrawer from "./NavDrawer";
 import { useWallet } from "../utils";
 import { useEffect } from "react";
 

@@ -11,7 +11,8 @@ export default function Page({ sidebar, title, children }) {
     const slides = [
         {
             bg: "tete.hover",
-            intro: "Welcome to Tété, we are using Betting as an Instrument of Social Change.",
+            intro:
+                "Welcome to Tété, we are using Betting as an Instrument of Social Change.",
             image: "/header.png",
             buttons: [
                 {
@@ -25,7 +26,8 @@ export default function Page({ sidebar, title, children }) {
         },
         {
             bg: "tete.card",
-            intro: "Everytime you WIN, Someone on the streets also WIN. Together , let’s take Young Girls and Boys off the street.",
+            intro:
+                "Everytime you WIN, Someone on the streets also WIN. Together , let’s take Young Girls and Boys off the street.",
             image: "/wallet.png",
             buttons: [
                 {
@@ -40,7 +42,8 @@ export default function Page({ sidebar, title, children }) {
         },
         {
             bg: "tete.hover",
-            intro: "From Grammy, BET Awards, Oscars, You can now stake on your Favourite nominee from any Category.",
+            intro:
+                "From Grammy, BET Awards, Oscars, You can now stake on your Favourite nominee from any Category.",
             image: "/grammy.png",
             buttons: [
                 {
@@ -51,7 +54,7 @@ export default function Page({ sidebar, title, children }) {
     ];
     return (
         <>
-            <Header title={title} onopen={sidebar.onOpen} />
+            <Header title={title} sidebar={sidebar} />
             <Flex
                 direction={{ base: "column", md: "row" }}
                 justifyContent="space-evenly"

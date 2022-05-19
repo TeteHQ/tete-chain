@@ -8,6 +8,8 @@ import {
 } from "@chakra-ui/react";
 import { Button, Link } from "@saas-ui/react";
 
+import { useWallet } from "../utils";
+
 const ListHeader = ({ children }) => {
     return (
         <Text fontWeight="extrabold" fontSize="lg" mb={2}>
