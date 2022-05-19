@@ -18,7 +18,7 @@ export default function Header({ title = "Not Found!", sidebar }) {
     }, []);
 
     return (
-        <>
+        <Box pos={{ md: "fixed" }} top="0" left="230" right="0" zIndex={1000}>
             <Head>
                 <title>{title}</title>
             </Head>
@@ -67,6 +67,6 @@ export default function Header({ title = "Not Found!", sidebar }) {
                     </Box>
                 </Flex>
             </Flex>
-        </>
+        </Box>
     );
 }

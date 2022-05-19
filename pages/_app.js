@@ -4,7 +4,6 @@ import Link from "next/link";
 import { SaasProvider, ModalsProvider } from "@saas-ui/react";
 
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { theme } from "../utils/theme";
 import { Provider } from "../utils/context";
 
@@ -21,7 +20,6 @@ function MyApp({ Component, pageProps }) {
                         <Navbar display={{ base: "none", md: "unset" }} />
                         <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
                             <Component sidebar={sidebar} {...pageProps} />
-                            <Footer />
                         </Box>
                     </Box>
                 </ModalsProvider>

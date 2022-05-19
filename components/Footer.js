@@ -22,7 +22,7 @@ export default function Footer() {
     const { address, isConnected, connectWallet } = useWallet({ auto: false });
 
     return (
-        <Box bg="tete.900" color="white">
+        <Box bg="tete.900" color="white" zIndex={1000}>
             <Container as={Stack} maxW="6xl" py={16}>
                 <SimpleGrid columns={[2, 3, 6]} spacing={3}>
                     <Stack spacing={2}>

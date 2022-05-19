@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import SlideCard from "./SlideCard";
 import Header from "./Header";
+import Footer from "./Footer";
 import Widget from "./Widget";
 import EventCardRightWidget from "./SportsRightWidget";
 
@@ -57,9 +58,10 @@ export default function Page({ sidebar, title, children }) {
             <Header title={title} sidebar={sidebar} />
             <Flex
                 direction={{ base: "column", md: "row" }}
-                justifyContent="space-evenly"
+                justifyContent="start"
+                mt="50px"
             >
-                <Box w="full" p="4">
+                <Box w={{ base: "full", md: "77%" }} p="4">
                     <Carousel showThumbs={false} autoPlay infiniteLoop>
                         {slides.map((slide, index) => (
                             <SlideCard slide={slide} key={index} />
@@ -67,7 +69,13 @@ export default function Page({ sidebar, title, children }) {
                     </Carousel>
                     {children}
                 </Box>
-                <Box color="white" w={{ base: "full", md: "30%" }} p="4">
+                <Box
+                    pos="fixed"
+                    right="0"
+                    color="white"
+                    w={{ base: "full", md: "20%" }}
+                    p="4"
+                >
                     <Text fontSize="md" fontWeight="normal" mb="4">
                         Trending
                     </Text>
@@ -84,6 +92,7 @@ export default function Page({ sidebar, title, children }) {
                     />
                 </Box>
             </Flex>
+            <Footer />
         </>
     );
 }
