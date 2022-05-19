@@ -1,12 +1,15 @@
-import { Box, Flex, Text, SimpleGrid} from "@chakra-ui/react";
-import { Button, DataTable, Link } from "@saas-ui/react";
+import { Box, Flex, Text} from "@chakra-ui/react";
+import { Button, Link } from "@saas-ui/react";
+import { useState, useEffect } from "react";
 
 import Page from "../components/Page";
 import EventCard from "../components/EventCard";
 import SlideCard from "../components/SlideCard";
 import NftStaking from "../components/NftStaking"
+import TetePools from "../components/TetePools";
 
-export default function Home({ sidebar }) {
+export default function Home({ sidebar }) {    
+
     return (
         <Page sidebar={sidebar} title="Home">
             <Box py="2">
@@ -51,86 +54,10 @@ export default function Home({ sidebar }) {
                         }}
                     />
                 </Flex>
-                <Box color="white" overflowX="auto" mt="2">
-                    <DataTable
-                        columns={[
-                            { id: "creator", Header: "Creator" },
-                            { id: "time", Header: "Time" },
-                            { id: "event", Header: "Event" },
-                            { id: "prediction", Header: "Prediction" },
-                            { id: "actions" },
-                        ]}
-                        data={[
-                            {
-                                creator: "John Doe",
-                                time: "12:00",
-                                event: "Grammy Awards",
-                                prediction: "Nominee",
-                                actions: (
-                                    <Button
-                                        size="sm"
-                                        color="gray.800"
-                                        label="Place Bet"
-                                    />
-                                ),
-                            },
-                            {
-                                creator: "John Doe",
-                                time: "12:00",
-                                event: "Grammy Awards",
-                                prediction: "Nominee",
-                                actions: (
-                                    <Button
-                                        size="sm"
-                                        color="gray.800"
-                                        label="Place Bet"
-                                    />
-                                ),
-                            },
-                            {
-                                creator: "John Doe",
-                                time: "12:00",
-                                event: "Grammy Awards",
-                                prediction: "Nominee",
-                                actions: (
-                                    <Button
-                                        size="sm"
-                                        color="gray.800"
-                                        label="Place Bet"
-                                    />
-                                ),
-                            },
-                            {
-                                creator: "John Doe",
-                                time: "12:00",
-                                event: "Grammy Awards",
-                                prediction: "Nominee",
-                                actions: (
-                                    <Button
-                                        size="sm"
-                                        color="gray.800"
-                                        label="Place Bet"
-                                    />
-                                ),
-                            },
-                            {
-                                creator: "John Doe",
-                                time: "12:00",
-                                event: "Grammy Awards",
-                                prediction: "Nominee",
-                                actions: (
-                                    <Button
-                                        size="sm"
-                                        color="gray.800"
-                                        label="Place Bet"
-                                    />
-                                ),
-                            },
-                        ]}
-                        isSortable
-                        isSelectable
-                    />
+                <Box mb='2'>
+                    <TetePools/>
                 </Box>
+                
                 <Box textAlign="right">
                     <Link href="/pools/create">
                         <Button
@@ -148,70 +75,15 @@ export default function Home({ sidebar }) {
                     </Link>
                 </Box>
             </Box>
-            <Box>
-            <SimpleGrid columns={[2, null, 3]} spacing={5} py="2">
-          <NftStaking
-            id='1'
-            title="Crypto Punk"
-            price="Price"
-            description="PunkEE Punk"
-            chainLogo="/eth.png"
-            value="0.004"
-            href="/"
-            bgImage="/widget1.png"
-          />
-          <NftStaking
-          id='2'
-            title="Crypto Punk"
-            price="Price"
-            description="PunkEE Punk"
-            chainLogo="/eth.png"
-            value="0.004"
-            href="/"
-            bgImage="/widget2.png"
-          />
-          <NftStaking
-          id='3'
-            title="Crypto Punk"
-            price="Price"
-            description="PunkEE Punk"
-            chainLogo="/eth.png"
-            value="0.004"
-            href="/"
-            bgImage="/widget1.png"
-          />
-          <NftStaking
-          id='4'
-            title="Crypto Punk"
-            price="Price"
-            description="PunkEE Punk"
-            chainLogo="/eth.png"
-            value="0.004"
-            href="/"
-            bgImage="/widget2.png"
-          />
-          <NftStaking
-          id='5'
-            title="Crypto Punk"
-            price="Price"
-            description="PunkEE Punk"
-            chainLogo="/eth.png"
-            value="0.004"
-            href="/"
-            bgImage="/widget1.png"
-          />
-          <NftStaking
-          id='6'
-            title="Crypto Punk"
-            price="Price"
-            description="PunkEE Punk"
-            chainLogo="/eth.png"
-            value="0.004"
-            href="/"
-            bgImage="/widget2.png"
-          />
+            <Box> 
+            <Box mt='4' mb='2' justifyContent="space-between" color="white">
+                    <Text fontSize="xl" fontWeight="bold">
+                        NFT Staking
+                    </Text>           
+           </Box>
+              <NftStaking/>
+              
          
-        </SimpleGrid>
             </Box>
             <Box my="8" id="wallet">
                 <SlideCard

@@ -39,22 +39,27 @@ export default function Create({ sidebar }) {
                                     label="Category"
                                 />
                                 <Field
-                                    name="type"
-                                    type="native-select"
-                                    options={[
-                                        { label: "Football", color: "black" },
-                                        { label: "Basketball" },
-                                    ]}
-                                    label="Type"
-                                />
-                                <Field
                                     name="outcome"
                                     type="native-select"
+                                    w='15vh'
                                     options={[
                                         { value: 2, color: "black" },
                                         { value: 3 },
                                     ]}
                                     label="No. Outcome"
+                                />
+                                <Field
+                                    name="eventTopic"
+                                    type="text"
+                                    label="Event Topic"
+                                    placeholder="English Premier League"
+                                />
+                                <Field
+                                    name="event"
+                                    type="text"                                    
+                                    label="Event"
+                                    placeholder="Will Chelsea beat Manchester United"
+
                                 />
 
                                 <Flex
@@ -62,29 +67,7 @@ export default function Create({ sidebar }) {
                                     alignItems="center"
                                     justifyContent="space-around"
                                 >
-                                    <Button
-                                        label="W"
-                                        fontSize="xl"
-                                        bg="gray.500"
-                                        _hover={{ bg: "tete.hover" }}
-                                    />
-                                    <DisplayIf
-                                        name="outcome"
-                                        condition={(value) => value == 3}
-                                    >
-                                        <Button
-                                            label="D"
-                                            fontSize="xl"
-                                            bg="gray.500"
-                                            _hover={{ bg: "tete.hover" }}
-                                        />
-                                    </DisplayIf>
-                                    <Button
-                                        label="L"
-                                        fontSize="xl"
-                                        bg="gray.500"
-                                        _hover={{ bg: "tete.hover" }}
-                                    />
+                                    
                                 </Flex>
                                 <Field
                                     name="amount"
@@ -93,6 +76,7 @@ export default function Create({ sidebar }) {
                                     defaultValue={5}
                                     min={5}
                                     required
+                                    w='25vh'
                                 />
                                 <SubmitButton
                                     label="Create Pool"

@@ -92,7 +92,7 @@ export default function Navbar(props) {
                 <NavItem fontWeight={"extrabold"} href="/pools/staking" fontSize='md'>
                         NFT Staking
                     </NavItem>
-                    <NavItem fontWeight={"extrabold"} href="/#pools" fontSize='md'>
+                    <NavItem fontWeight={"extrabold"} href="/tetepools" fontSize='md'>
                         Tete Pools
                     </NavItem>
                 </Box>

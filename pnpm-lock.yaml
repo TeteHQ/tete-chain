@@ -19,6 +19,7 @@ specifiers:
   react-dom: 18.0.0
   react-icons: ^4.3.1
   react-responsive-carousel: ^3.2.23
+  swr: ^1.3.0
   web3modal: ^1.9.6
 
 dependencies:
@@ -38,6 +39,7 @@ dependencies:
   react-dom: 18.0.0_react@18.0.0
   react-icons: 4.3.1_react@18.0.0
   react-responsive-carousel: 3.2.23
+  swr: 1.3.0_react@18.0.0
   web3modal: 1.9.6
 
 devDependencies:
@@ -5295,7 +5297,7 @@ packages:
         optional: true
     dependencies:
       react: 18.0.0
-      react-style-singleton: 2.1.1_react@18.0.0
+      react-style-singleton: 2.2.0_react@18.0.0
       tslib: 1.14.1
     dev: false
 
@@ -5339,6 +5341,22 @@ packages:
       invariant: 2.2.4
       react: 18.0.0
       tslib: 1.14.1
+    dev: false
+
+  /react-style-singleton/2.2.0_react@18.0.0:
+    resolution: {integrity: sha512-nK7mN92DMYZEu3cQcAhfwE48NpzO5RpxjG4okbSqRRbfal9Pk+fG2RdQXTMp+f6all1hB9LIJSt+j7dCYrU11g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      get-nonce: 1.0.1
+      invariant: 2.2.4
+      react: 18.0.0
+      tslib: 2.3.1
     dev: false
 
   /react-table/7.7.0_react@18.0.0:
@@ -5812,6 +5830,14 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /swr/1.3.0_react@18.0.0:
+    resolution: {integrity: sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.0.0
+    dev: false
 
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=}
