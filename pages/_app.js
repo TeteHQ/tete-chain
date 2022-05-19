@@ -1,18 +1,12 @@
-import {
-    Box,
-    Drawer,
-    DrawerContent,
-    DrawerOverlay,
-    useDisclosure,
-} from "@chakra-ui/react";
+import { Box, useDisclosure } from "@chakra-ui/react";
 
 import Link from "next/link";
-import { SaasProvider, AuthProvider, ModalsProvider } from "@saas-ui/react";
+import { SaasProvider, ModalsProvider } from "@saas-ui/react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { theme } from "../utils/theme";
-import { supabaseService } from "../utils/supabase";
+import { Provider } from "../utils/context";
 
 // Saas UI components will use the Next Link Wrapper.
 const NextLink = (props) => <Link passHref {...props} />;
@@ -21,7 +15,7 @@ function MyApp({ Component, pageProps }) {
     const sidebar = useDisclosure();
     return (
         <SaasProvider theme={theme} linkComponent={NextLink}>
-            <AuthProvider {...supabaseService}>
+            <Provider>
                 <ModalsProvider>
                     <Box as="section" bg={"tete.500"} minH="100vh">
                         <Navbar display={{ base: "none", md: "unset" }} />
@@ -31,7 +25,7 @@ function MyApp({ Component, pageProps }) {
                         </Box>
                     </Box>
                 </ModalsProvider>
-            </AuthProvider>
+            </Provider>
         </SaasProvider>
     );
 }
