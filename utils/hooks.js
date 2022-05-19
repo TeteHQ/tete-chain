@@ -25,7 +25,7 @@ export function useWallet({ sync = false, auto = true } = {}) {
         else
             provider
                 .ethers(network)
-                .catch(() => snackbar("Failed to connect to the network"))
+                .catch(() => snackbar.error("Failed to connect to the network"))
                 .then(setProvider);
     }, [sync, network, setProvider]);
 
