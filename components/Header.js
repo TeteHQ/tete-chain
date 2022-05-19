@@ -6,7 +6,7 @@ import { FiMenu } from "react-icons/fi";
 import { useWallet } from "../utils";
 import { useEffect } from "react";
 
-export default function Header({ title = "Not Found!", onOpen = () => {} }) {
+export default function Header({ title = "Not Found!", sidebar }) {
     const { address, isConnected, connectWallet } = useWallet({ auto: false });
 
     useEffect(() => {
