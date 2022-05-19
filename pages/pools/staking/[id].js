@@ -1,3 +1,4 @@
+import useSWR from "swr";
 import {
     Box,
     Button,
@@ -10,9 +11,9 @@ import {
     NumberIncrementStepper,
     NumberDecrementStepper,
 } from "@chakra-ui/react";
-import Page from "../../../components/Page";
 import { useRouter } from "next/router";
-import useSWR from "swr";
+
+import Page from "../../../components/Layouts/Page";
 
 const fetcher = async (url) => {
     const res = await fetch(url);

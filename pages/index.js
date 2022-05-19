@@ -6,7 +6,7 @@ import Page from "../components/Layouts/Page";
 import EventCard from "../components/Cards/Event";
 import SlideCard from "../components/Cards/Slide";
 import StakeList from "../components/Modules/StakeList";
-import TetePools from "../components/TetePools";
+import PoolModule from "../components/Modules/PoolModule";
 
 export default function Home({ sidebar }) {
     return (
@@ -54,7 +54,7 @@ export default function Home({ sidebar }) {
                     />
                 </Flex>
                 <Box mb="2">
-                    <TetePools />
+                    <PoolModule />
                 </Box>
 
                 <Box textAlign="right">

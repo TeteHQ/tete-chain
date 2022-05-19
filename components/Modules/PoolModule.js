@@ -1,8 +1,8 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useModals } from "@saas-ui/react";
-import Betting from "./Modals/Betting";
+import Betting from "../Modals/Betting";
 
-export default function TetePool({
+export default function PoolModule({
     isLive,
     placedBets,
     league,

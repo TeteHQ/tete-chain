@@ -1,9 +1,9 @@
 import { SimpleGrid } from "@chakra-ui/react";
 
 import { useEffect, useState } from "react";
-import TetePool from "./TetePool";
+import PoolModule from "./PoolModule";
 
-export default function TetePools() {
+export default function PoolList() {
     const [tete, setTete] = useState([]);
 
     const fetchTete = async () => {
@@ -25,7 +25,7 @@ export default function TetePools() {
                 {tete.map((tete) => {
                     return (
                         <>
-                            <TetePool
+                            <PoolModule
                                 id={tete.id}
                                 isLive={tete.isLive}
                                 placedBets={tete.placedBets}
