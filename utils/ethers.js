@@ -2,6 +2,8 @@ import Web3Modal from "web3modal";
 import WalletConnect from "@walletconnect/web3-provider";
 import { ethers, utils } from "ethers";
 
+import { tete_addr, tete_abi } from "./const";
+
 /**
  * Web3Modal provider options
  */
@@ -39,6 +41,7 @@ export const provider = {
     rpcNode: null,
     chainId: null,
     instance: null,
+    contracts: {},
 
     async connect(chainId) {
         if (!this.instance) {
@@ -58,14 +61,16 @@ export const provider = {
         );
     },
 
-    async contract(addr, abi, sync = false) {
-        return contract(
-            addr,
-            abi,
-            !sync
-                ? await this.ethers(this.chainId)
-                : this.ethersSync(this.rpcNode)
-        );
+    async contract(addr = tete_addr, abi = tete_abi, sync = false) {
+        if (!this.contracts[addr])
+            this.contracts[addr] = contract(
+                addr,
+                abi,
+                !sync
+                    ? await this.ethers(this.chainId)
+                    : this.ethersSync(this.rpcNode)
+            );
+        return this.contracts[addr];
     },
 
     /**
@@ -91,6 +96,11 @@ export const provider = {
  * @returns {{[method: string]: (...args: any[]) => Promise<unknown>}}
  */
 function contract(addr, abi, provider) {
+    if (!provider || typeof addr !== "string" || !abi?.length) return false;
+    if (typeof abi[0] === "string") {
+        const iface = new utils.Interface(abi);
+        abi = iface.format(utils.FormatTypes.json);
+    }
     const instance = new ethers.Contract(addr, abi, provider);
     const methods = {};
     for (let method of abi.map()) {
