@@ -9,8 +9,8 @@ import {
     useSnackbar,
 } from "@saas-ui/react";
 
-import Page from "../../components/Page";
-import { getContract, prettyError } from "../../utils/contract";
+import Page from "../../components/Layouts/Page";
+import { provider } from "../../utils";
 
 export default function Create({ sidebar }) {
     const snackbar = useSnackbar();

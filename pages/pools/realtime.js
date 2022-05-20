@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
-import Page from "../../components/Page";
+import Page from "../../components/Layouts/Page";
 
 export default function Realtime({ sidebar }) {
     return (
