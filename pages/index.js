@@ -1,6 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { Button, Link } from "@saas-ui/react";
-import { useState, useEffect } from "react";
 
 import Page from "../components/Layouts/Page";
 import EventCard from "../components/Cards/Event";

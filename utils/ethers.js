@@ -2,7 +2,7 @@ import Web3Modal from "web3modal";
 import WalletConnect from "@walletconnect/web3-provider";
 import { ethers, utils } from "ethers";
 
-import { tete_addr, tete_abi } from "./const";
+import { tete_addr, tete_abi } from "../const";
 
 /**
  * Web3Modal provider options

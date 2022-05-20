@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import Widget from "../Widgets/Base";
 import SlideCard from "../Cards/Slide";
 import SportWidget from "../Widgets/Sport";
-import { home_slides } from "../../utils/const";
+import { home_slides } from "../../const";
 
 export default function Page({ sidebar, title, children }) {
     return (
