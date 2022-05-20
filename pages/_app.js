@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import Navbar from "../components/Layouts/Navigation/Navbar";
 import { theme } from "../utils/theme";
-import { Provider } from "../utils/context";
+import Provider from "../components/Provider";
 
 // Saas UI components will use the Next Link Wrapper.
 const NextLink = (props) => <Link passHref {...props} />;

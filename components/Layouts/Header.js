@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Box, HStack, Flex, IconButton } from "@chakra-ui/react";
 import { Button, Link, Select } from "@saas-ui/react";
 import { FiMenu } from "react-icons/fi";
@@ -7,7 +6,7 @@ import Drawer from "./Navigation/Drawer";
 import { useWallet } from "../../utils";
 import { useEffect } from "react";
 
-export default function Header({ title = "Not Found!", sidebar }) {
+export default function Header({ title = "Not Found!", appName, sidebar }) {
     const { address, isConnected, connectWallet } = useWallet({ auto: false });
 
     useEffect(() => {
@@ -15,13 +14,10 @@ export default function Header({ title = "Not Found!", sidebar }) {
             connectWallet();
             localStorage.setItem("connected", Date.now());
         }
-    }, []);
+    }, [connectWallet, isConnected]);
 
     return (
         <Box pos={{ md: "fixed" }} top="0" left="230" right="0" zIndex={1000}>
-            <Head>
-                <title>{title}</title>
-            </Head>
             <Flex
                 as="header"
                 align="center"

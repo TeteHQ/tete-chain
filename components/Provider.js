@@ -1,8 +1,9 @@
 import { createContext, useState } from "react";
+import Head from "next/head";
 
 export const Context = createContext({});
 
-export function Provider({ children, value }) {
+export default function Provider({ children, value }) {
     const [account, setAccount] = useState("");
     const [balance, setBalance] = useState(0);
     const [ethProvider, setProvider] = useState(null);
@@ -25,6 +26,11 @@ export function Provider({ children, value }) {
                 ...value,
             }}
         >
+            <Head>
+                <title>
+                    {title} | {appName}
+                </title>
+            </Head>
             {children}
         </Context.Provider>
     );

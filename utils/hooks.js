@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useContext, useMemo } from "react";
 import { useSnackbar } from "@saas-ui/react";
-import { Context } from "./context";
+import { Context } from "../components/Provider";
 import { provider } from "./ethers";
 
 export function useWallet({ sync = false, auto = true } = {}) {
@@ -27,7 +27,7 @@ export function useWallet({ sync = false, auto = true } = {}) {
                 .ethers(network)
                 .catch(() => snackbar.error("Failed to connect to the network"))
                 .then(setProvider);
-    }, [sync, network, setProvider]);
+    }, [sync, setProvider, network, snackbar]);
 
     const disconnectWallet = useCallback(() => {
         setAccount([]);
@@ -35,7 +35,7 @@ export function useWallet({ sync = false, auto = true } = {}) {
         provider.clearCachedProvider();
         setProvider(null);
         snackbar.error("Disconnected from wallet");
-    }, []);
+    }, [setAccount, setBalance, setProvider, snackbar]);
 
     const syncProvider = useCallback(() => {
         setProvider(provider.ethersSync(network));
@@ -50,11 +50,11 @@ export function useWallet({ sync = false, auto = true } = {}) {
             ?.listAccounts()
             .then(setAccount)
             .then(() => snackbar("Wallet connected successfully!"));
-    }, [ethProvider?.listAccounts, setAccount]);
+    }, [ethProvider, ethProvider.listAccounts, setAccount, snackbar]);
 
     useEffect(() => {
         if (connected) ethProvider?.getBalance(connected).then(setBalance);
-    }, [ethProvider?.getBalance, account, connected, setBalance]);
+    }, [account, connected, setBalance, ethProvider]);
 
     return {
         balance,
