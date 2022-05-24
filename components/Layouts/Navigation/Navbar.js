@@ -1,5 +1,5 @@
-import React from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Link, SearchInput } from "@saas-ui/react";
 import {
     FaAward,
     FaBasketballBall,
@@ -13,7 +13,6 @@ import {
 import { MdHome } from "react-icons/md";
 
 import NavItem from "./NavItem";
-import { Link, SearchInput } from "@saas-ui/react";
 
 export default function Navbar(props) {
     return (
@@ -89,10 +88,18 @@ export default function Navbar(props) {
                     </NavItem>
                 </Box>
                 <Box>
-                <NavItem fontWeight={"extrabold"} href="/pools/staking" fontSize='md'>
+                    <NavItem
+                        fontWeight={"extrabold"}
+                        href="/pools/staking"
+                        fontSize="md"
+                    >
                         NFT Staking
                     </NavItem>
-                    <NavItem fontWeight={"extrabold"} href="/tetepools" fontSize='md'>
+                    <NavItem
+                        fontWeight={"extrabold"}
+                        href="/tetepools"
+                        fontSize="md"
+                    >
                         Tete Pools
                     </NavItem>
                 </Box>
