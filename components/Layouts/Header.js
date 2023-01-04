@@ -48,12 +48,7 @@ export default function Header({ sidebar }) {
                 </HStack>
 
                 <Flex alignItems="center" justifyContent="end">
-                    <Box d={{ base: "none", md: "flex" }}>
-                        <Select
-                            options={[{ label: "ENG", color: "tete.900" }]}
-                        />
-                    </Box>
-                    <Box w="400px" ml="4" mr="-8">
+                    <Box ml="4">
                         <Button
                             bg="tete.hover"
                             label={isConnected ? address : "Connect UD Wallet"}
