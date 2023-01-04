@@ -6,8 +6,10 @@ import Drawer from "./Navigation/Drawer";
 import { useWallet } from "../../utils";
 import { useEffect } from "react";
 
-export default function Header({ title = "Not Found!", appName, sidebar }) {
-    const { address, isConnected, connectWallet } = useWallet({ auto: false });
+export default function Header({ sidebar }) {
+    const { address, isConnected, connectWallet, connectUDWallet } = useWallet({
+        auto: false,
+    });
 
     useEffect(() => {
         if (!isConnected && localStorage.getItem("connected")) {
@@ -51,7 +53,16 @@ export default function Header({ title = "Not Found!", appName, sidebar }) {
                             options={[{ label: "ENG", color: "tete.900" }]}
                         />
                     </Box>
-                    <Box w="200px" ml="4" mr="-8">
+                    <Box w="400px" ml="4" mr="-8">
+                        <Button
+                            bg="tete.hover"
+                            label={isConnected ? address : "Connect UD Wallet"}
+                            _hover={{
+                                bg: "tete.500",
+                            }}
+                            onClick={connectUDWallet}
+                            sx={{ mr: 2 }}
+                        />
                         <Button
                             bg="tete.hover"
                             label={isConnected ? address : "Connect Wallet"}
