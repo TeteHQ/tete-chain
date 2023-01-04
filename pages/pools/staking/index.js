@@ -1,8 +1,8 @@
-import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 
-import Page from "../../../components/Page";
-import NftStaking from "../../../components/NftStaking";
-import SearchField from "../../../components/SearchField";
+import Page from "../../../components/Layouts/Page";
+import NftStaking from "../../../components/Modules/StakeModule";
+import SearchField from "../../../components/Layouts/Navigation/SearchField";
 
 export default function index({ sidebar }) {
     return (

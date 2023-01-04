@@ -1,6 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
-import Page from "../../components/Page";
-import TetePools from "../../components/TetePools";
+import Page from "../../components/Layouts/Page";
+import TetePools from "../../components/Modules/PoolModule";
 
 export default function index({ sidebar }) {
     return (
