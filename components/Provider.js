@@ -27,9 +27,7 @@ export default function Provider({ children, value }) {
             }}
         >
             <Head>
-                <title>
-                    {title} | {appName}
-                </title>
+                <title>{title} | Tete</title>
             </Head>
             {children}
         </Context.Provider>
