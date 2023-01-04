@@ -40,27 +40,36 @@ export function useWallet({ sync = false, auto = true } = {}) {
         try {
             const authorization = await uauth.loginWithPopup();
             const address = authorization.idToken.wallet_address;
-            setAccount([address]);
+            setAccount([{ address, name: authorization.idToken.sub }]);
         } catch (error) {
             console.error(error);
         }
     };
 
+    const disconnectUDWallet = useCallback(async () => {
+        await uauth.logout();
+        snackbar.success("Wallet has been disconnected");
+
+        console.log("Logged out with Unstoppable");
+    }, [snackbar]);
+
     const disconnectWallet = useCallback(() => {
+        if (typeof connected === "object") {
+            return disconnectUDWallet();
+        }
         setAccount([]);
         setBalance(0);
         provider.clearCachedProvider();
         setProvider(null);
         snackbar.error("Disconnected from wallet");
-    }, [setAccount, setBalance, setProvider, snackbar]);
-
-    const disconnectUDWallet = async () => {
-        await uauth.logout();
-        snackbar.success("Wallet has been disconnected");
-
-        console.log("Logged out with Unstoppable");
-    };
-
+    }, [
+        connected,
+        disconnectUDWallet,
+        setAccount,
+        setBalance,
+        setProvider,
+        snackbar,
+    ]);
     const syncProvider = useCallback(() => {
         setProvider(provider.ethersSync(network));
     }, [network, setProvider]);
@@ -89,6 +98,9 @@ export function useWallet({ sync = false, auto = true } = {}) {
             return account?.length > 0;
         },
         get address() {
+            if (typeof this.connected === "object") {
+                return this.connected.name;
+            }
             return this.connected
                 ? this.connected.slice(0, 6) + "..." + this.connected.slice(-4)
                 : null;
