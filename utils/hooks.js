@@ -98,8 +98,8 @@ export function useWallet({ sync = false, auto = true } = {}) {
             return account?.length > 0;
         },
         get address() {
-            if (typeof this.connected === "object") {
-                return this.connected.name;
+            if (this.connected && typeof this.connected === "object") {
+                return this.connected?.name;
             }
             return this.connected
                 ? this.connected.slice(0, 6) + "..." + this.connected.slice(-4)
