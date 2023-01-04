@@ -7,7 +7,13 @@ import { useWallet } from "../../utils";
 import { useEffect } from "react";
 
 export default function Header({ sidebar }) {
-    const { address, isConnected, connectWallet, connectUDWallet } = useWallet({
+    const {
+        address,
+        isConnected,
+        connectWallet,
+        connectUDWallet,
+        disconnectWallet,
+    } = useWallet({
         auto: false,
     });
 
@@ -49,23 +55,38 @@ export default function Header({ sidebar }) {
 
                 <Flex alignItems="center" justifyContent="end">
                     <Box ml="4">
-                        <Button
-                            bg="tete.hover"
-                            label={isConnected ? address : "Connect UD Wallet"}
-                            _hover={{
-                                bg: "tete.500",
-                            }}
-                            onClick={connectUDWallet}
-                            sx={{ mr: 2 }}
-                        />
-                        <Button
-                            bg="tete.hover"
-                            label={isConnected ? address : "Connect Wallet"}
-                            _hover={{
-                                bg: "tete.500",
-                            }}
-                            onClick={connectWallet}
-                        />
+                        {!isConnected ? (
+                            <>
+                                <Button
+                                    bg="tete.hover"
+                                    label="Connect UD Wallet"
+                                    _hover={{
+                                        bg: "tete.500",
+                                    }}
+                                    onClick={connectUDWallet}
+                                    sx={{ mr: 2 }}
+                                />
+                                <Button
+                                    bg="tete.hover"
+                                    label="Connect Wallet"
+                                    _hover={{
+                                        bg: "tete.500",
+                                    }}
+                                    onClick={connectWallet}
+                                />
+                            </>
+                        ) : (
+                            <>
+                                <Button
+                                    bg="tete.hover"
+                                    label={address}
+                                    _hover={{
+                                        bg: "tete.500",
+                                    }}
+                                    onClick={disconnectWallet}
+                                />
+                            </>
+                        )}
                     </Box>
                 </Flex>
             </Flex>
