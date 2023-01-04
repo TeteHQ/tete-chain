@@ -5,8 +5,8 @@ import { Context } from "../components/Provider";
 import { provider } from "./ethers";
 
 const uauth = new UAuth({
-    clientID: process.env.NEXT_PUBLIC_UD_CLIENT_ID,
-    redirectUri: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+    clientID: "956e6ba4-d8d4-48c9-b64f-af4d258d3453",
+    redirectUri: "https://tete-chain.com",
     scope: "openid wallet",
 });
 
