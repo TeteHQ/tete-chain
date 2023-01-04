@@ -48,10 +48,11 @@ export function useWallet({ sync = false, auto = true } = {}) {
 
     const disconnectUDWallet = useCallback(async () => {
         await uauth.logout();
+        setAccount([]);
         snackbar.success("Wallet has been disconnected");
 
         console.log("Logged out with Unstoppable");
-    }, [snackbar]);
+    }, [snackbar, setAccount]);
 
     const disconnectWallet = useCallback(() => {
         if (typeof connected === "object") {
