@@ -16,7 +16,7 @@ export default function StakeModule({
     return (
         <>
             <Box m="2">
-                <Link href={href}>
+                <Link href={href} passHref>
                     <Card
                         mb="0.5"
                         rounded="none"
@@ -58,7 +58,7 @@ export default function StakeModule({
 
                 <Link
                     href="/pools/staking/[id]"
-                    as={`/pools/staking/${nft.id}`}
+                    as={`/pools/staking/${nft?.id}`}
                 >
                     <a>
                         <Button

@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 
 import Page from "../../../components/Layouts/Page";
-import NftStaking from "../../../components/Modules/StakeModule";
+import NftStaking from "../../../components/Modules/StakeList";
 import SearchField from "../../../components/Layouts/Navigation/SearchField";
 
 export default function index({ sidebar }) {
