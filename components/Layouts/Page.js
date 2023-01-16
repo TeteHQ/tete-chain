@@ -1,19 +1,11 @@
-import { Box, Divider, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {
-	Accordion,
-	AccordionItem,
-	AccordionButton,
-	AccordionPanel,
-	AccordionIcon,
-} from "@chakra-ui/react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Widget from "../Widgets/Base";
 import SlideCard from "../Cards/Slide";
-import SportWidget from "../Widgets/Sport";
 import { home_slides } from "../../const";
+import AccountInfoTab from "../Widgets/AccountInonTab";
 
 export default function Page({ sidebar, title, children }) {
 	return (
@@ -37,44 +29,10 @@ export default function Page({ sidebar, title, children }) {
 					right="0"
 					color="white"
 					w={{ base: "full", md: "20%" }}
-					p="4"
+					p="2"
 					background="#050514cd"
 				>
-					<Text>My Balance</Text>
-					<Divider mb="3" />
-					<Accordion allowToggle>
-						<AccordionItem border="none">
-							<AccordionButton>
-								<Box as="span" flex="1" textAlign="left">
-									Withdraw
-								</Box>
-								<AccordionIcon />
-							</AccordionButton>
-							<AccordionPanel pb={4}>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Recusandae, architecto!
-							</AccordionPanel>
-						</AccordionItem>
-
-						<AccordionItem border="none">
-							<AccordionButton>
-								<Box as="span" flex="1" textAlign="left">
-									My Account Info
-								</Box>
-								<AccordionIcon />
-							</AccordionButton>
-							<AccordionPanel pb={4}>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Recusandae, architecto!
-							</AccordionPanel>
-						</AccordionItem>
-					</Accordion>
-					{/* <Text fontSize="md" fontWeight="normal" mb="4">
-						Trending
-					</Text>
-					<Widget title="Monkey NFT" href="/" bgImage="/widget1.png" />
-					<SportWidget />
-					<Widget title="Bored Ape NFT" href="/" bgImage="/widget2.png" /> */}
+					<AccountInfoTab />
 				</Box>
 			</Flex>
 			<Footer />
