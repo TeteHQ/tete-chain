@@ -13,6 +13,7 @@ export default function Header({ sidebar }) {
 		connectWallet,
 		connectUDWallet,
 		disconnectWallet,
+		account,
 	} = useWallet({
 		auto: false,
 	});
@@ -23,10 +24,18 @@ export default function Header({ sidebar }) {
 			localStorage.setItem("connected", Date.now());
 		}
 	}, []);
+	useEffect(() => {
+		if (isConnected) {
+			localStorage.setItem("domainId", address);
+			localStorage.getItem("domainId");
+		}
+	}, [address]);
+
 	const logout = () => {
 		disconnectWallet();
-		localStorage.clear();
+		localStorage.removeItem("domainId");
 	};
+
 	return (
 		<Box pos={{ md: "fixed" }} top="0" left="230" right="0" zIndex={1000}>
 			<Flex
@@ -58,7 +67,7 @@ export default function Header({ sidebar }) {
 
 				<Flex alignItems="center" justifyContent="end">
 					<Box ml="4">
-						{!isConnected ? (
+						{!address ? (
 							<>
 								<Button
 									bg="tete.hover"
