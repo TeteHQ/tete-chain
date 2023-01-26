@@ -8,7 +8,7 @@ import Head from "next/head";
 
 export const Context = createContext({
 	get account() {
-		return localStorage.getItem("account");
+		return JSON.parse(localStorage.getItem("account"));
 	},
 });
 
@@ -21,7 +21,7 @@ export default function Provider({ children, value }) {
 
 	const setAccount = (account) => {
 		updateAccount(account);
-		localStorage.setItem("account", account);
+		localStorage.setItem("account", JSON.stringify(account));
 	};
 
 	return (
