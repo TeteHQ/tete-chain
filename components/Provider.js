@@ -5,15 +5,15 @@ import Head from "next/head";
 // export const Context = createContext({
 // 	// account: localStorage.getItem("account"),
 // });
-
-export const Context = createContext({
+const DEFAULT_AUTH = {
 	get account() {
 		return JSON.parse(localStorage.getItem("account"));
 	},
-});
+}
+export const Context = createContext(DEFAULT_AUTH);
 
 export default function Provider({ children, value }) {
-	const [account, updateAccount] = useState("");
+	const [account, updateAccount] = useState(DEFAULT_AUTH.account?.[0]?.name || DEFAULT_AUTH.account?.[0]?.address || "");
 	const [balance, setBalance] = useState(0);
 	const [ethProvider, setProvider] = useState(null);
 	const [network, setNetwork] = useState(null);
