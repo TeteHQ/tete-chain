@@ -1,18 +1,21 @@
 import { Box, HStack, Flex, IconButton } from "@chakra-ui/react";
-import { Button, Link, Select } from "@saas-ui/react";
+import { Button, Link } from "@saas-ui/react";
 import { FiMenu } from "react-icons/fi";
 
 import Drawer from "./Navigation/Drawer";
 import { useWallet } from "../../utils";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { Context } from "../Provider";
 
 export default function Header({ sidebar }) {
+	// const { setAccount } = useContext(Context);
 	const {
 		address,
 		isConnected,
 		connectWallet,
 		connectUDWallet,
 		disconnectWallet,
+		account,
 	} = useWallet({
 		auto: false,
 	});
@@ -23,10 +26,7 @@ export default function Header({ sidebar }) {
 			localStorage.setItem("connected", Date.now());
 		}
 	}, []);
-	const logout = () => {
-		disconnectWallet();
-		localStorage.clear();
-	};
+
 	return (
 		<Box pos={{ md: "fixed" }} top="0" left="230" right="0" zIndex={1000}>
 			<Flex
@@ -86,7 +86,7 @@ export default function Header({ sidebar }) {
 									_hover={{
 										bg: "tete.500",
 									}}
-									onClick={logout}
+									onClick={disconnectWallet}
 								/>
 							</>
 						)}
