@@ -6,7 +6,7 @@ import { provider } from "./ethers";
 
 const uauth = new UAuth({
     clientID: "956e6ba4-d8d4-48c9-b64f-af4d258d3453",
-    redirectUri: "http://localhost:3000",
+    redirectUri: "https://tete-chain.com",
     scope: "openid wallet",
 });
 
