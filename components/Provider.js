@@ -14,7 +14,9 @@ const DEFAULT_AUTH = {
 export const Context = createContext(DEFAULT_AUTH);
 
 export default function Provider({ children, value }) {
-    const [account, updateAccount] = useState([DEFAULT_AUTH.account?.[0]]);
+    const [account, updateAccount] = useState(
+        DEFAULT_AUTH.account?.[0] ? [DEFAULT_AUTH.account?.[0]] : []
+    );
     const [balance, setBalance] = useState(0);
     const [ethProvider, setProvider] = useState(null);
     const [network, setNetwork] = useState(null);
